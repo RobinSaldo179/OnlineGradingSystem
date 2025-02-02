@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}View Course - Grading System{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h4>{{ course.course_name }} ({{ course.course_code }})</h4>
+    </div>
+    <div class="card-body">
+        <h5>Course Details</h5>
+        <p><strong>Description:</strong> {{ course.description }}</p>
+        <p><strong>Credits:</strong> {{ course.credits }}</p>
+        <p><strong>Status:</strong> 
+            {% if course.is_active %}
+            <span class="badge bg-success">Active</span>
+            {% else %}
+            <span class="badge bg-secondary">Inactive</span>
+            {% endif %}
+        </p>
+
+        <h5 class="mt-4">Enrolled Students</h5>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in enrolled_students %}
+                <tr>
+                    <td>{{ student.student_id }}</td>
+                    <td>{{ student.full_name }}</td>
+                    <td>{{ student.email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <a href="{% url 'edit_course' course.id %}" class="btn btn-warning">Edit Course</a>
+        <a href="{% url 'course_list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+{% endblock %}

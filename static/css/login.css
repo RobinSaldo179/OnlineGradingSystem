@@ -1,0 +1,152 @@
+.login-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+    /* Add animated background pattern */
+    background-image: 
+        linear-gradient(135deg, #6B73FF 0%, #000DFF 100%),
+        radial-gradient(at 50% 100%, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%);
+    background-size: 200% 200%;
+    animation: gradientBG 15s ease infinite;
+    padding: 40px 0;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.login-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.login-title {
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 2px solid #e1e1e1;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #6B73FF;
+    box-shadow: 0 0 0 0.2rem rgba(107, 115, 255, 0.25);
+}
+
+.btn-login {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-register {
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #444;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+.login-divider {
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: #e1e1e1;
+}
+
+.login-divider::before {
+    left: 0;
+}
+
+.login-divider::after {
+    right: 0;
+}
+
+/* Add these new styles for registration pages */
+.registration-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+    background-image: 
+        linear-gradient(135deg, #6B73FF 0%, #000DFF 100%),
+        radial-gradient(at 50% 100%, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.1) 100%);
+    background-size: 200% 200%;
+    animation: gradientBG 15s ease infinite;
+    padding: 40px 0;
+}
+
+.registration-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.registration-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.btn-register-submit {
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-register-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

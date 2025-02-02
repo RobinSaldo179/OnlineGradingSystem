@@ -1,0 +1,116 @@
+.dashboard-container {
+    background: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.stats-card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+}
+
+.stats-card.primary {
+    background: linear-gradient(45deg, #4e73df, #224abe);
+}
+
+.stats-card.success {
+    background: linear-gradient(45deg, #1cc88a, #13855c);
+}
+
+.stats-card.info {
+    background: linear-gradient(45deg, #36b9cc, #258391);
+}
+
+.stats-card.warning {
+    background: linear-gradient(45deg, #f6c23e, #dda20a);
+}
+
+.stats-icon {
+    font-size: 2rem;
+    opacity: 0.4;
+}
+
+.stats-card .text-white {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.stats-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-number {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.activity-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.activity-card .card-header {
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.5rem;
+}
+
+.activity-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #4e73df;
+}
+
+.table thead th {
+    border-top: none;
+    border-bottom-width: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.badge {
+    padding: 0.5em 1em;
+    font-weight: 500;
+}
+
+.chart-container {
+    position: relative;
+    margin: auto;
+    height: 300px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .stats-card {
+        margin-bottom: 1rem;
+    }
+}
+
+.recent-activity {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.recent-activity::-webkit-scrollbar {
+    width: 6px;
+}
+
+.recent-activity::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.recent-activity::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}

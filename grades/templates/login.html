@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}Login - Grading System{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card login-card">
+                <div class="card-body p-5">
+                    <h3 class="text-center login-title mb-4">Welcome Back</h3>
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <p class="mb-0">Invalid username or password.</p>
+                    </div>
+                    {% endif %}
+                    <form method="post" novalidate>
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label">{{ field.label }}</label>
+                            {{ field|add_class:"form-control" }}
+                        </div>
+                        {% endfor %}
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-login">Sign In</button>
+                        </div>
+                    </form>
+                    <div class="login-divider">
+                        <span class="px-3 bg-white text-muted">or</span>
+                    </div>
+                    <div class="text-center mt-3">
+                        <p class="text-muted mb-3">Don't have an account?</p>
+                        <a href="{% url 'register_student' %}" class="btn btn-outline-primary btn-register mb-2 w-100">Register as Student</a>
+                        <a href="{% url 'register_instructor' %}" class="btn btn-outline-success btn-register w-100">Register as Instructor</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock %}
